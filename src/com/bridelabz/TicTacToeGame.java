@@ -4,7 +4,10 @@ public class TicTacToeGame {
     static char[] board = new char[10];
     static char userLetter;
     static char computerLetter;
+
+
     public static void main(String[] args) {
+
         System.out.println("Welcome to Tic Tac Toe Game");
         createEmptyBoard();
         chooseLetter();
@@ -28,3 +31,4 @@ public class TicTacToeGame {
 
 
 }
+
