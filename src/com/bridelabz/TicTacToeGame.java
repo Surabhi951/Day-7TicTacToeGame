@@ -10,6 +10,7 @@ public class TicTacToeGame {
         createEmptyBoard();
         chooseLetter();
         showBoard();
+        playerTurn();
     }
 
     private static void createEmptyBoard()
@@ -37,6 +38,22 @@ public class TicTacToeGame {
         System.out.println(board[7] + " | " + board[8] + " | " + board[9]);
     }
 
+    private static void playerTurn()
+    {
+        int playerMove;
+        while (true)
+        {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Choose your location(1-9): ");
+            playerMove = scanner.nextInt();
+            if (board[playerMove] == ' ')
+            {
+                break;
+            }
+        }
+        System.out.println("Player choose:: " + playerMove);
+        board[playerMove] = userLetter;
+    }
 
 }
 
