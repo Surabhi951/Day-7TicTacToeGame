@@ -9,19 +9,15 @@ public class TicTacToeGame {
         System.out.println("Welcome to Tic Tac Toe Game");
         createEmptyBoard();
         chooseLetter();
-<<<<<<< HEAD
 
         while(true) {
             showBoard();
             playerTurn();
             checkFreeSpace();
             checkFirstPlayer();
+            winner();
         }
-=======
-        showBoard();
-        playerTurn();
-        checkFreeSpace();
->>>>>>> main
+
     }
 
     private static void createEmptyBoard()
@@ -88,7 +84,7 @@ public class TicTacToeGame {
             System.out.println("Free space is available! you have "+numOfFreeSpaces+ " moves left");
         }
     }
-<<<<<<< HEAD
+
 
     private static void checkFirstPlayer()
     {
@@ -103,8 +99,21 @@ public class TicTacToeGame {
             System.out.println("User starts to play first");
         }
     }
-}
-=======
->>>>>>> main
 
+    private static void winner()
+    {
+        if ((board[1] == userLetter && board[2] == userLetter && board[3] == userLetter) ||
+                (board[4] == userLetter && board[5] == userLetter && board[6] == userLetter) ||
+                (board[7] == userLetter && board[8] == userLetter && board[9] == userLetter) ||
+                (board[1] == userLetter && board[5] == userLetter && board[9] == userLetter) ||
+                (board[3] == userLetter && board[5] == userLetter && board[7] == userLetter))
+        {
+            showBoard();
+            System.out.println("Player win the game");
+            System.exit(0);
+        }
+    }
 }
+
+
+
