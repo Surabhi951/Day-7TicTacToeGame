@@ -9,8 +9,13 @@ public class TicTacToeGame {
         System.out.println("Welcome to Tic Tac Toe Game");
         createEmptyBoard();
         chooseLetter();
-        showBoard();
-        playerTurn();
+
+        while(true) {
+            showBoard();
+            playerTurn();
+            checkFreeSpace();
+            checkFirstPlayer();
+        }
     }
 
     private static void createEmptyBoard()
@@ -55,5 +60,41 @@ public class TicTacToeGame {
         board[playerMove] = userLetter;
     }
 
+    private static void checkFreeSpace()
+    {
+        boolean isSpaceAvailable = false;
+        int numOfFreeSpaces = 0;
+        for(int index=1;index<board.length;index++)
+        {
+            if((board[index] == ' '))
+            {
+                isSpaceAvailable = true;
+                numOfFreeSpaces++;
+            }
+        }
+        if(isSpaceAvailable == false)
+        {
+            System.out.println("Board is full! You can't make another move");
+            System.exit(0);
+        }
+        else
+        {
+            System.out.println("Free space is available! you have "+numOfFreeSpaces+ " moves left");
+        }
+    }
+
+    private static void checkFirstPlayer()
+    {
+        int Head = 0;
+        double toss = Math.floor(Math.random()*10) % 2;
+        if ( toss == Head )
+        {
+            System.out.println("computer starts to play first");
+        }
+        else
+        {
+            System.out.println("User starts to play first");
+        }
+    }
 }
 
