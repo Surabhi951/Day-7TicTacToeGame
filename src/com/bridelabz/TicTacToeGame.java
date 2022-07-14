@@ -9,9 +9,19 @@ public class TicTacToeGame {
         System.out.println("Welcome to Tic Tac Toe Game");
         createEmptyBoard();
         chooseLetter();
+<<<<<<< HEAD
+
+        while(true) {
+            showBoard();
+            playerTurn();
+            checkFreeSpace();
+            checkFirstPlayer();
+        }
+=======
         showBoard();
         playerTurn();
         checkFreeSpace();
+>>>>>>> main
     }
 
     private static void createEmptyBoard()
@@ -78,5 +88,23 @@ public class TicTacToeGame {
             System.out.println("Free space is available! you have "+numOfFreeSpaces+ " moves left");
         }
     }
+<<<<<<< HEAD
+
+    private static void checkFirstPlayer()
+    {
+        int Head = 0;
+        double toss = Math.floor(Math.random()*10) % 2;
+        if ( toss == Head )
+        {
+            System.out.println("computer starts to play first");
+        }
+        else
+        {
+            System.out.println("User starts to play first");
+        }
+    }
+}
+=======
+>>>>>>> main
 
 }
