@@ -16,6 +16,7 @@ public class TicTacToeGame {
             checkFreeSpace();
             checkFirstPlayer();
             winner();
+            computerTurn();
         }
     }
 
@@ -106,6 +107,17 @@ public class TicTacToeGame {
             System.out.println("Player win the game");
             System.exit(0);
         }
+    }
+
+    private static void computerTurn()
+    {
+        int computerMove;
+        do {
+            computerMove = (int) Math.floor(Math.random() * 10) % 9 + 1;
+
+        } while (board[computerMove] != ' ');
+        System.out.println("Computer choose:: " + computerMove);
+        board[computerMove] = computerLetter;
     }
 }
 
